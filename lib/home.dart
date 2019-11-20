@@ -46,13 +46,14 @@ class _BodyState extends State<Body> {
 
     return CustomScrollView(
       slivers: <Widget>[
-        SliverList(
-          delegate: SliverChildListDelegate([
-            SearchBox(),
-          ]),
-        ),
+        SliverAppBar(
+          automaticallyImplyLeading: false,
+          titleSpacing: 0.0,
+           title: SearchBox(),
+           pinned: true,
+          ),
         SliverToBoxAdapter(
-            child: SizedBox(
+          child: SizedBox(
           height: MediaQuery.of(context).size.height / 6,
           child: HorizontalList(),
         )),
@@ -69,11 +70,11 @@ class _BodyState extends State<Body> {
               crossAxisSpacing: 0.0,
             ),
             delegate:
-                SliverChildBuilderDelegate((BuildContext context, int index) {
-              return Container(
+              SliverChildBuilderDelegate((BuildContext context, int index) {
+                return Container(
                   color: Colors.yellow,
                   child: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8),
                     child: Container(
                       child: GestureDetector(
                           onTap: () {
@@ -104,16 +105,16 @@ class _SearchBoxState extends State<SearchBox> {
   Widget build(BuildContext context) {
     return Container(
         color: Colors.blue[900],
-        height: 80,
         child: Center(
           child: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(8.0),
             child: TextFormField(
               decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
                   prefixIcon: Icon(Icons.search),
                   hintText: "Search products more",
+                  contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
             ),
@@ -216,34 +217,37 @@ class _ViewMoreItemsState extends State<ViewMoreItems> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow,
-      child: Column(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Row(
-              children: <Widget>[
-                Text("New Products",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontSize: 20)),
-                Spacer(),
-                GestureDetector(
-                  onTap: () {
-                    _gotoViewMore();
-                  },
-                  child: Text("View More",
+    return Padding(
+      padding: EdgeInsets.only(top: 5),
+      child: Container(
+        color: Colors.yellow,
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Row(
+                children: <Widget>[
+                  Text("New Products",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 20)),
-                )
-              ],
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      _gotoViewMore();
+                    },
+                    child: Text("View More",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 20)),
+                  )
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -18,7 +18,20 @@ class _BlogState extends State<Blog> {
             SliverAppBar(
               pinned: true,
               centerTitle: true,
-              title: Text("Blog", style: TextStyle(color: Colors.black),),     
+              title: Text("Our Blog", style: TextStyle(color: Colors.black),), 
+              leading: Icon(Icons.border_color, size: 25,color: Colors.black,),
+              actions: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(right: 8),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      GestureDetector(onTap: (){}, child: Text("View All", style: TextStyle(color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold),)),
+                    ],
+                  ),
+                ),
+              ],    
               backgroundColor: Colors.white,
             ),
             Details()

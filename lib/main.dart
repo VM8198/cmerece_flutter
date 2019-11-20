@@ -1,4 +1,4 @@
-import 'package:cmerce/mainScreen.dart';
+import 'package:cmerce/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

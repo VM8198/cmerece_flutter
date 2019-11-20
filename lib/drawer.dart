@@ -1,5 +1,5 @@
 import 'package:cmerce/cart.dart';
-import 'package:cmerce/mainScreen.dart';
+import 'package:cmerce/home.dart';
 import 'package:cmerce/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';

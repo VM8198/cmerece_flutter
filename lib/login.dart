@@ -1,7 +1,7 @@
 import 'package:cmerce/offers.dart';
 import 'package:flutter/material.dart';
 import 'offers.dart';
-import 'mainScreen.dart';
+import 'home.dart';
 
 class LogIn extends StatefulWidget {
   @override

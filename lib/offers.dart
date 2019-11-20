@@ -79,7 +79,7 @@ class _DealsOfTheDayState extends State<DealsOfTheDay> {
     List<dynamic> images = new List<dynamic>();
     images.insert(0, AssetImage('assets/images/blog_1.jpg'));
     images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/product_1.jpg'));
+    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
@@ -156,7 +156,7 @@ class _FashionState extends State<Fashion> {
     List<dynamic> images = new List<dynamic>();
     images.insert(0, AssetImage('assets/images/blog_1.jpg'));
     images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/product_1.jpg'));
+    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
@@ -233,7 +233,7 @@ class _HomeLivingState extends State<HomeLiving> {
     List<dynamic> images = new List<dynamic>();
     images.insert(0, AssetImage('assets/images/blog_1.jpg'));
     images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/product_1.jpg'));
+    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
@@ -310,7 +310,7 @@ class _KidsState extends State<Kids> {
     List<dynamic> images = new List<dynamic>();
     images.insert(0, AssetImage('assets/images/blog_1.jpg'));
     images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/product_1.jpg'));
+    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
