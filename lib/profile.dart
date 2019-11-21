@@ -26,7 +26,7 @@ class ProfilePhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 1.8,
+      height: MediaQuery.of(context).size.height / 2,
       color: Colors.black,
       child: Image(
         image: AssetImage('assets/images/slide_part_3.jpg'),

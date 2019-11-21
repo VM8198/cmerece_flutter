@@ -231,9 +231,10 @@ class _HomeLivingState extends State<HomeLiving> {
   @override
     Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/blog_1.jpg'));
-    images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
+    images.insert(0, AssetImage('assets/images/offer_1.jpg'));
+    images.insert(1, AssetImage('assets/images/offer_2.jpg'));
+    images.insert(2, AssetImage('assets/images/offer_1.jpg'));
+    images.insert(3, AssetImage('assets/images/offer_2.jpg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {

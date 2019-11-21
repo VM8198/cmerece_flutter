@@ -33,16 +33,16 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_4.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_4.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_4.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_2.jpg'));
+    images.insert(0, AssetImage('assets/images/product_1.jpg'));
+    images.insert(1, AssetImage('assets/images/product_2.jpg'));
+    images.insert(2, AssetImage('assets/images/product_3.jpg'));
+    images.insert(1, AssetImage('assets/images/product_4.jpg'));
+    images.insert(2, AssetImage('assets/images/product_1.jpg'));
+    images.insert(1, AssetImage('assets/images/product_2.jpg'));
+    images.insert(2, AssetImage('assets/images/product_3.jpg'));
+    images.insert(1, AssetImage('assets/images/product_4.jpg'));
+    images.insert(2, AssetImage('assets/images/product_1.jpg'));
+    images.insert(2, AssetImage('assets/images/product_2.jpg'));
 
     return CustomScrollView(
       slivers: <Widget>[
@@ -54,7 +54,7 @@ class _BodyState extends State<Body> {
           ),
         SliverToBoxAdapter(
           child: SizedBox(
-          height: MediaQuery.of(context).size.height / 6,
+          height: MediaQuery.of(context).size.height / 6.5,
           child: HorizontalList(),
         )),
         SliverList(
@@ -151,7 +151,7 @@ class _HorizontalListState extends State<HorizontalList> {
                     ClipRRect(
                         borderRadius: BorderRadius.circular(100.0),
                         child: SizedBox(
-                          height: MediaQuery.of(context).size.height / 10.5,
+                          height: MediaQuery.of(context).size.height / 11,
                           width: MediaQuery.of(context).size.width / 6,
                           child: Image(
                             image: images[index],
@@ -224,7 +224,7 @@ class _ViewMoreItemsState extends State<ViewMoreItems> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(top: 8, right: 10, left: 10),
               child: Row(
                 children: <Widget>[
                   Text("New Products",
@@ -237,7 +237,7 @@ class _ViewMoreItemsState extends State<ViewMoreItems> {
                     onTap: () {
                       _gotoViewMore();
                     },
-                    child: Text("View More",
+                    child: Text("View All",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,

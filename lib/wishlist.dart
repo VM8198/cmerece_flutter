@@ -37,7 +37,7 @@ class _ItemsState extends State<Items> {
   @override
   Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/slide_part_2.jpg'));
+    images.insert(0, AssetImage('assets/images/slide_part_1.jpg'));
     images.insert(1, AssetImage('assets/images/slide_part_3.jpg'));
     images.insert(2, AssetImage('assets/images/slide_part_4.jpg'));
     images.insert(1, AssetImage('assets/images/slide_part_2.jpg'));
@@ -86,7 +86,7 @@ class _ItemsState extends State<Items> {
                             color: Colors.blue, // button color
                             child: InkWell(
                               child: SizedBox(
-                                  width: 30, height: 30, child: Icon(Icons.menu)),
+                                  width: 30, height: 30, child: Center(child: Icon(Icons.add_shopping_cart, size: 20,))),
                               onTap: () {},
                             ),
                           ),

@@ -12,9 +12,7 @@ class _ProductiDetailsState extends State<ProductiDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: header(context),
-        drawer: MyDrawer(),
-        body: Details());
+        appBar: header(context), drawer: MyDrawer(), body: Details());
   }
 }
 
@@ -42,12 +40,9 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
     images.insert(0, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_4.jpg'));
     images.insert(1, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_4.jpg'));
-
+    images.insert(2, AssetImage('assets/images/slide_part_2.jpg'));
+    
     return Container(
       child: Column(
         children: <Widget>[
@@ -118,31 +113,48 @@ class _DetailsState extends State<Details> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Container(
-                          height: 30,
-                          width: 30,
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.grey),
+                        Material(
+                          child: InkWell(
+                             onTap: (){},
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey),
+                            ),
+                          ),
                         ),
-                        Container(
-                          height: 30,
-                          width: 30,
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.yellow[800]),
+                         Material(
+                          child: InkWell(
+                             onTap: (){},
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.yellow[600]),
+                            ),
+                          ),
                         ),
-                        Container(
-                          height: 30,
-                          width: 30,
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.black),
-                        )
+                         Material(
+                          child: InkWell(
+                             onTap: (){},
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 4),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.black),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     Padding(

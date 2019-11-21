@@ -37,12 +37,12 @@ class _CartItemsState extends State<CartItems> {
   @override
   Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_4.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_4.jpg'));
+    images.insert(0, AssetImage('assets/images/product_2.jpg'));
+    images.insert(1, AssetImage('assets/images/product_3.jpg'));
+    images.insert(2, AssetImage('assets/images/product_4.jpg'));
+    images.insert(1, AssetImage('assets/images/product_2.jpg'));
+    images.insert(2, AssetImage('assets/images/product_3.jpg'));
+    images.insert(1, AssetImage('assets/images/product_4.jpg'));
 
     return SliverList(
         delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
@@ -55,10 +55,10 @@ class _CartItemsState extends State<CartItems> {
               children: <Widget>[
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 4,
-                  height: MediaQuery.of(context).size.height / 5,
+                  height: MediaQuery.of(context).size.height / 6,
                   child: Image(
                     image: images[index],
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 Container(

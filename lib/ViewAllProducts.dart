@@ -18,13 +18,13 @@ class _ViewAllItemsState extends State<ViewAllItems> {
           child: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
-                pinned: true,
-                leading: Padding(
+                  pinned: true,
+                  leading: Padding(
                      padding: EdgeInsets.all(8.0),
                      child: Icon(Icons.apps, color: Colors.black, size: 30,),
                    ),
                    title: Padding(
-                     padding: const EdgeInsets.only(left: 20),
+                     padding: EdgeInsets.only(left: 20),
                      child: Row(
                         children: <Widget>[
                           Icon(Icons.sort, color: Colors.black, size: 20,),
@@ -82,7 +82,6 @@ class _ViewItemsState extends State<ViewItems> {
     images.insert(1, AssetImage('assets/images/product_4.jpg'));
     images.insert(2, AssetImage('assets/images/product_1.jpg'));
     images.insert(1, AssetImage('assets/images/product_2.jpg'));
-
 
     return SliverGrid(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
