@@ -1,5 +1,7 @@
+import 'package:cmerce/cart.dart';
+import 'package:cmerce/categories.dart';
+import 'package:cmerce/wishlist.dart';
 import 'package:flutter/material.dart';
-import 'drawer.dart';
 
 class Offers extends StatefulWidget {
   @override
@@ -22,14 +24,20 @@ class _OffersState extends State<Offers> {
             IconButton(
               icon: Icon(Icons.favorite_border),
               onPressed: () {
-                // _select(choices[0]);
+                 Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WishList()),
+                  );
               },
             ),
             // action button
             IconButton(
               icon: Icon(Icons.add_shopping_cart),
               onPressed: () {
-                // _select(choices[1]);
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Cart()),
+                );
               },
             ),
           ],
@@ -59,7 +67,7 @@ class _OffersState extends State<Offers> {
             ],
           ),
         ),
-        drawer: MyDrawer(),
+        // drawer: MyDrawer(),
         body: TabBarView(
           children: [DealsOfTheDay(), Fashion(), HomeLiving(), Kids()],
         ),
@@ -74,12 +82,20 @@ class DealsOfTheDay extends StatefulWidget {
 }
 
 class _DealsOfTheDayState extends State<DealsOfTheDay> {
+
+   _goToCategories(String categoryName){
+     Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Categories(value: categoryName)),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/blog_1.jpg'));
-    images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
+    images.insert(0, AssetImage('assets/images/banner/banner_1.jpeg'));
+    images.insert(1, AssetImage('assets/images/banner/banner_2.jpeg'));
+    images.insert(2, AssetImage('assets/images/banner/banner_3.jpeg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
@@ -119,8 +135,7 @@ class _DealsOfTheDayState extends State<DealsOfTheDay> {
                         FlatButton(
                             color: Colors.yellow,
                             onPressed: () {
-                              // _login(userNameController.text,
-                              //     passwordController.text);
+                              _goToCategories("Deals of the Day");
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(40.0),
@@ -151,12 +166,20 @@ class Fashion extends StatefulWidget {
 }
 
 class _FashionState extends State<Fashion> {
+
+   _goToCategories(String categoryName){
+     Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Categories(value: categoryName)),
+    );
+  }
+
   @override
     Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/blog_1.jpg'));
-    images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
+    images.insert(0, AssetImage('assets/images/banner/banner_2.jpeg'));
+    images.insert(1, AssetImage('assets/images/banner/banner_1.jpeg'));
+    images.insert(2, AssetImage('assets/images/banner/banner_3.jpeg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
@@ -196,8 +219,7 @@ class _FashionState extends State<Fashion> {
                         FlatButton(
                             color: Colors.yellow,
                             onPressed: () {
-                              // _login(userNameController.text,
-                              //     passwordController.text);
+                              _goToCategories("Fashion");
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(40.0),
@@ -228,13 +250,20 @@ class HomeLiving extends StatefulWidget {
 }
 
 class _HomeLivingState extends State<HomeLiving> {
+
+   _goToCategories(String categoryName){
+     Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Categories(value: categoryName)),
+    );
+  }
+
   @override
     Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/offer_1.jpg'));
-    images.insert(1, AssetImage('assets/images/offer_2.jpg'));
-    images.insert(2, AssetImage('assets/images/offer_1.jpg'));
-    images.insert(3, AssetImage('assets/images/offer_2.jpg'));
+    images.insert(0, AssetImage('assets/images/banner/banner_1.jpeg'));
+    images.insert(1, AssetImage('assets/images/banner/banner_3.jpeg'));
+    images.insert(2, AssetImage('assets/images/banner/banner_2.jpeg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
@@ -274,12 +303,10 @@ class _HomeLivingState extends State<HomeLiving> {
                         FlatButton(
                             color: Colors.yellow,
                             onPressed: () {
-                              // _login(userNameController.text,
-                              //     passwordController.text);
+                              _goToCategories("Home and Living");
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(40.0),
-                              // side: BorderSide(color: Colors.red)
                             ),
                             child: Text(
                               "Shop Now",
@@ -306,12 +333,20 @@ class Kids extends StatefulWidget {
 }
 
 class _KidsState extends State<Kids> {
+
+   _goToCategories(String categoryName){
+     Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Categories(value: categoryName)),
+    );
+  }
+
   @override
    Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/blog_1.jpg'));
-    images.insert(1, AssetImage('assets/images/blog_2.jpg'));
-    images.insert(2, AssetImage('assets/images/blog_1.jpg'));
+    images.insert(0, AssetImage('assets/images/banner/banner_3.jpeg'));
+    images.insert(1, AssetImage('assets/images/banner/banner_2.jpeg'));
+    images.insert(2, AssetImage('assets/images/banner/banner_1.jpeg'));
 
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) {
@@ -351,8 +386,7 @@ class _KidsState extends State<Kids> {
                         FlatButton(
                             color: Colors.yellow,
                             onPressed: () {
-                              // _login(userNameController.text,
-                              //     passwordController.text);
+                              _goToCategories("Kids");
                             },
                             shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(40.0),

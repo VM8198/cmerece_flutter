@@ -25,18 +25,18 @@ AppBar header(context) {
         icon: Icon(Icons.favorite_border),
         onPressed: () {
           Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => WishList()),
-        );
+            context,
+            MaterialPageRoute(builder: (context) => WishList()),
+          );
         },
       ),
       IconButton(
         icon: Icon(Icons.add_shopping_cart),
         onPressed: () {
           Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Cart()),
-        );
+            context,
+            MaterialPageRoute(builder: (context) => Cart()),
+          );
         },
       ),
     ],

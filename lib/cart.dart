@@ -1,6 +1,5 @@
 import 'package:cmerce/header.dart';
 import 'package:flutter/material.dart';
-import 'drawer.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -12,13 +11,15 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: header(context),
-        drawer: MyDrawer(),
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
               pinned: true,
               centerTitle: true,
-              title: Text("Cart", style: TextStyle(color: Colors.black),),              
+              title: Text(
+                "Cart",
+                style: TextStyle(color: Colors.black),
+              ),
               backgroundColor: Colors.white,
             ),
             CartItems(),
@@ -37,7 +38,7 @@ class _CartItemsState extends State<CartItems> {
   @override
   Widget build(BuildContext context) {
     List<dynamic> images = new List<dynamic>();
-    images.insert(0, AssetImage('assets/images/product_2.jpg'));
+    images.insert(0, AssetImage('assets/images/abcd.jpeg'));
     images.insert(1, AssetImage('assets/images/product_3.jpg'));
     images.insert(2, AssetImage('assets/images/product_4.jpg'));
     images.insert(1, AssetImage('assets/images/product_2.jpg'));
@@ -133,7 +134,7 @@ class _CartItemsState extends State<CartItems> {
           )
         ],
       ));
-    }, childCount: 2));
+    }, childCount: 3));
   }
 }
 
@@ -143,90 +144,102 @@ class TotalBox extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
         return Container(
-          child: Column(
-            children: <Widget>[
-              Row(
-            children: <Widget>[
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: 8, left: 8),
-                      child: Row(
-                        children: <Widget>[Text("Promo code: ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)],
+            child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 8, left: 8),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "Promo code: ",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
-                      child: Row(
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 60,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              child: TextFormField(
+                                // controller: promocodeController,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(5)))),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
                         children: <Widget>[
-                          SizedBox(
-                            height: 60,
-                            width: MediaQuery.of(context).size.width/2.5,
-                            child: TextFormField(
-                            // controller: promocodeController,
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5)))),
+                          Text(
+                            "Total: ",
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
+                          Text(
+                            "Rs. 5226",
+                            style: TextStyle(fontSize: 20),
                           )
-                          
                         ],
                       ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Text("Total: ", style: TextStyle(fontWeight: FontWeight.bold),), Text("Rs. 5226", style: TextStyle(fontSize: 20),)
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Text("Free shipping over Rs.200", style: TextStyle(fontStyle: FontStyle.italic),)
-                      ],
-                    )
+                      Row(
+                        children: <Widget>[
+                          Text(
+                            "Free shipping over Rs.200",
+                            style: TextStyle(fontStyle: FontStyle.italic),
+                          )
+                        ],
+                      )
                     ],
-                ),
-              ),              
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.all(8),
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: 50,
-              child: FlatButton(
-                  color: Colors.yellow,
-                  onPressed: () {
-                    // _login(userNameController.text,
-                    //     passwordController.text);
-                  },
-                  shape: RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(10.0),
-                          // side: BorderSide(color: Colors.red)
                   ),
-                  child: Text(
-                    "Checkout",
-                    style: TextStyle(
-                        color: Colors.black, fontSize: 20),
-                  ))),
-          ),
-            ],
-          )
-           
-        );
+                ),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.all(8),
+              child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 50,
+                  child: FlatButton(
+                      color: Colors.yellow,
+                      onPressed: () {
+                        // _login(userNameController.text,
+                        //     passwordController.text);
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(10.0),
+                        // side: BorderSide(color: Colors.red)
+                      ),
+                      child: Text(
+                        "Checkout",
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ))),
+            ),
+          ],
+        ));
       }, childCount: 1),
     );
   }

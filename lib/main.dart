@@ -1,7 +1,17 @@
+import 'package:cmerce/ViewAllProducts.dart';
 import 'package:cmerce/home.dart';
+import 'package:cmerce/login.dart';
+import 'package:cmerce/wishlist.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(MyApp());
+void main() => {
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+  .then((_){
+    runApp(MyApp());
+  })
+};
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -33,9 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
       body: MainSceen()
     );
   }

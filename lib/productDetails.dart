@@ -2,6 +2,7 @@ import 'package:cmerce/header.dart';
 import 'package:flutter/material.dart';
 import 'drawer.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ProductiDetails extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _ProductiDetailsState extends State<ProductiDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: header(context), drawer: MyDrawer(), body: Details());
+        appBar: header(context), body: Details());
   }
 }
 
@@ -31,9 +32,11 @@ class _DetailsState extends State<Details> {
   }
 
   _removeItem() {
-    setState(() {
-      counter--;
-    });
+    if(counter != 0){
+      setState(() {
+        counter--;
+      });
+    }
   }
 
   @override
@@ -42,7 +45,7 @@ class _DetailsState extends State<Details> {
     images.insert(0, AssetImage('assets/images/slide_part_2.jpg'));
     images.insert(1, AssetImage('assets/images/slide_part_2.jpg'));
     images.insert(2, AssetImage('assets/images/slide_part_2.jpg'));
-    
+
     return Container(
       child: Column(
         children: <Widget>[
@@ -115,7 +118,7 @@ class _DetailsState extends State<Details> {
                       children: <Widget>[
                         Material(
                           child: InkWell(
-                             onTap: (){},
+                            onTap: () {},
                             child: Container(
                               height: 30,
                               width: 30,
@@ -127,9 +130,11 @@ class _DetailsState extends State<Details> {
                             ),
                           ),
                         ),
-                         Material(
+                        Material(
                           child: InkWell(
-                             onTap: (){},
+                            onTap: () {
+                              
+                            },
                             child: Container(
                               height: 30,
                               width: 30,
@@ -141,9 +146,9 @@ class _DetailsState extends State<Details> {
                             ),
                           ),
                         ),
-                         Material(
+                        Material(
                           child: InkWell(
-                             onTap: (){},
+                            onTap: () {},
                             child: Container(
                               height: 30,
                               width: 30,
@@ -232,13 +237,18 @@ class _DetailsState extends State<Details> {
                               child: FlatButton(
                                   color: Colors.yellow,
                                   onPressed: () {
-                                    // _login(userNameController.text,
-                                    // passwordController.text);
+                                    Fluttertoast.showToast(
+                                        msg: "Item Added To Cart",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        gravity: ToastGravity.BOTTOM,
+                                        timeInSecForIos: 1,
+                                        textColor: Colors.white,
+                                        fontSize: 8
+                                    );
                                   },
                                   shape: RoundedRectangleBorder(
                                     borderRadius:
-                                        new BorderRadius.circular(10.0),
-                                    // side: BorderSide(color: Colors.red)
+                                        BorderRadius.circular(10.0),
                                   ),
                                   child: Text(
                                     "Add To Cart",

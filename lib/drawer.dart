@@ -144,19 +144,10 @@ class _MyDrawerState extends State<MyDrawer> {
           leading: Icon(Icons.verified_user, size: 30, color: Colors.black),
           title: Text('Log Out'),
           onTap: () {
-            Navigator.pop(context);
-            FutureBuilder<String>(
-                // future: _logout(),
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyApp()),
-                    );
-                  }
-                  if (!snapshot.hasData) {
-                  }
-                });
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Profile()),
+            );
           },
         ),
       ],

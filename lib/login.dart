@@ -1,6 +1,4 @@
-import 'package:cmerce/offers.dart';
 import 'package:flutter/material.dart';
-import 'offers.dart';
 import 'home.dart';
 
 class LogIn extends StatefulWidget {
@@ -11,8 +9,17 @@ class LogIn extends StatefulWidget {
 class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
+    // return Container(
+    //   child: Column(
+    //     children: <Widget>[Logo(), LoginDetails() ],
+    //   ),
+    // );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("CMERS"),
+         backgroundColor: Colors.blue[900],
+      ),
+      body: Column(
         children: <Widget>[Logo(), LoginDetails() ],
       ),
     );
@@ -80,12 +87,10 @@ class _LoginDetailsState extends State<LoginDetails> {
                   labelText: 'Password',
                   suffixIcon: IconButton(
                     icon: Icon(
-                      // Based on passwordVisible state choose the icon
                       passwordVisible ? Icons.visibility : Icons.visibility_off,
                       color: Theme.of(context).primaryColorDark,
                     ),
                     onPressed: () {
-                      //toogle the state of passwordVisible variable
                       setState(() {
                         passwordVisible = !passwordVisible;
                       });

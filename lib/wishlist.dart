@@ -12,7 +12,6 @@ class _WishListState extends State<WishList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: header(context),
-        drawer: MyDrawer(),
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
@@ -40,13 +39,13 @@ class _ItemsState extends State<Items> {
     images.insert(0, AssetImage('assets/images/slide_part_1.jpg'));
     images.insert(1, AssetImage('assets/images/slide_part_3.jpg'));
     images.insert(2, AssetImage('assets/images/slide_part_4.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_4.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_2.jpg'));
-    images.insert(1, AssetImage('assets/images/slide_part_3.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_4.jpg'));
-    images.insert(2, AssetImage('assets/images/slide_part_2.jpg'));
+    images.insert(3, AssetImage('assets/images/slide_part_2.jpg'));
+    images.insert(4, AssetImage('assets/images/slide_part_3.jpg'));
+    images.insert(5, AssetImage('assets/images/slide_part_4.jpg'));
+    images.insert(6, AssetImage('assets/images/slide_part_2.jpg'));
+    images.insert(7, AssetImage('assets/images/slide_part_3.jpg'));
+    images.insert(8, AssetImage('assets/images/slide_part_4.jpg'));
+    images.insert(9, AssetImage('assets/images/slide_part_2.jpg'));
 
     return SliverGrid(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -56,10 +55,10 @@ class _ItemsState extends State<Items> {
           return Container(
                 decoration: BoxDecoration(
               border: Border(
-                top: BorderSide(width: 1.0, color: Colors.grey),
-                bottom: BorderSide(width: 1.0, color: Colors.grey),
-                right: BorderSide(width: 1.0, color: Colors.grey),
-                left: BorderSide(width: 1.0, color: Colors.grey),
+                top: BorderSide(width: 0.5, color: Colors.grey),
+                bottom: BorderSide(width: 0.5, color: Colors.grey),
+                right: BorderSide(width: 0.5, color: Colors.grey),
+                left: BorderSide(width: 0.5, color: Colors.grey),
               ),
               color: Colors.white,
             ),
@@ -76,7 +75,9 @@ class _ItemsState extends State<Items> {
                             child: InkWell(
                               child: SizedBox(
                                   width: 30, height: 30, child: Icon(Icons.close)),
-                              onTap: () {},
+                              onTap: () {
+                                
+                              },
                             ),
                           ),
                         ),
@@ -101,7 +102,7 @@ class _ItemsState extends State<Items> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height/8,
                       width: MediaQuery.of(context).size.width/4,
-                      child: Image(image: images[index],fit: BoxFit.fill,),
+                      child: Image(image: images[index],fit: BoxFit.fill),
                     )
                   ],
                 ),
